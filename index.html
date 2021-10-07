@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <form id="forma" class="container">
+    <form id="formularioValidado" class="container" name="formularioValidado">
         <div class="card text">
             <div class="card-header">
                 <h1>Payment form example By Maxter</h1>
@@ -31,7 +31,8 @@
                 <div class="row">
                     <div class="col-12 col-md-5">
                         <label for="numbercard" class="form-label">Card #</label>
-                        <input type="password" class="form-control" id="numbercard" placeholder="xxxx-xxxx-xxxx">
+                        <input type="number" class="form-control" id="numbercard" name="numbercard" placeholder="xxxx-xxxx-xxxx-xxxx">
+                        <small id="smallnumbercard"></small>
                     </div>
                     <div class="col-12 col-md-3">
                         <label for="numbercvc" class="form-label">Cvc</label>
@@ -96,11 +97,12 @@
             <div class="card-footer text-muted">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button type="button" class="btn btn-secondary btn-lg">Cancel</button>
-                    <button type="button" class="btn btn-lg btn-primary">Send</button>
+                    <button type="submit" class="btn btn-lg btn-primary">Send</button>
                 </div>
             </div>
         </div>
     </form>
+    <script src="./main.js"></script>
 </body>
 
 </html>
