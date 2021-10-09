@@ -5,7 +5,7 @@ form.addEventListener("submit", function (evento) {
     var regexgood = 0
     let regexCard = /^[0-9]{13,16}$/
     let regexCvc = /^[0-9]{3}$/
-    let regexAmount = /^[0-9\.]$/
+    let regexAmount = /^[+]?([0-9]+(?:[\.][0-9]*)?|\.[0-9]+)$/ //^[-]?[0-9]+[\.]?[0-9]+$/  o  /^[1-9]\d*$/g   o   /^[0-9\.]$/
     let regexFirstname = /^[a-zA-Z\s]+$/
     let regexLastname = /^[a-zA-Z\s]+$/
     let regexPostalcode = /^[a-zA-Z0-9]+$/
@@ -39,7 +39,7 @@ form.addEventListener("submit", function (evento) {
 
     //Validador de Amount
 
-    if (evento.target.amount.value !== '' && regexAmount.test(evento.target.amount.value)) {
+    if (evento.target.amount.value > '0.00' && regexAmount.test(evento.target.amount.value)) {
         var regexgood = regexgood + 1;
         let smallamount = document.querySelector('[id=smallamount]');
         smallamount.innerHTML = "";
